@@ -1,6 +1,6 @@
 import APIResponse from '../interfaces/APIResponse';
 import APIService from '../services/APIService';
-import DataSetModel from '../Models/DataSetModel';
+import DataSetModel from '../models/DataSetModel';
 import DataSets from '../interfaces/DataSets';
 import * as MathUtility from '../utility/MathUtility';
 

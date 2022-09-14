@@ -1,7 +1,7 @@
 import axios, { AxiosError } from 'axios';
 
 import APIResponse from '../interfaces/APIResponse';
-import DataSetModel from '../Models/DataSetModel';
+import DataSetModel from '../models/DataSetModel';
 
 /**
  * Talks with Backed API service
