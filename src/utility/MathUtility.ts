@@ -1,5 +1,5 @@
 /**
- * Calcuate mean from numbers
+ * Calculate mean from numbers
  * @param numbers 
  * @returns number
  */
@@ -13,7 +13,7 @@ const mean = function (numbers: Array<number>) {
 
 
 /**
- * Calcuate median from numbers
+ * Calculate median from numbers
  * @param numbers 
  * @returns number
  */
@@ -30,7 +30,7 @@ const median = function (numbers: Array<number>) {
 };
 
 /**
- * Calcuate mode from numbers
+ * Calculate mode from numbers
  * @param numbers 
  * @returns number
  */

@@ -1,5 +1,5 @@
-export default interface DataSets {
-    mean: string,
-    median: string,
-    mode: string
+export default class DataSets {
+    mean= '-';
+    median= '-';
+    mode= '-';
 }

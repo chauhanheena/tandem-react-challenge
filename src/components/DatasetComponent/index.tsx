@@ -1,19 +1,36 @@
 import React, { FC } from 'react'
-import { Grid } from '@mui/material'
-import CustomCard, {ICustomCardProps} from '../CustomCard';
 
+import CustomCard from '../CustomCard';
+import classNames from 'classnames';
+import DataSets from '../../interfaces/DataSets';
+import { Grid } from '@mui/material';
+
+import useCustomCardStyles from './styles';
+
+/**
+ * Datasets contains mean, median, mode
+ */
 interface IDataSetProps {
-    dataSet: Array<ICustomCardProps>;
+    dataSet: DataSets;
 }
+
 
 const DataSet: FC<IDataSetProps> = (props) => {
     const { dataSet } = props;
+    const classes = useCustomCardStyles();
     return (
         <Grid container spacing={4} wrap={'nowrap'}>
-            {dataSet.map(data => (
-                <Grid item key={data.name} >
-                    <CustomCard name={data.name} value={data.value} />
-                </Grid>))}
+                <Grid item>
+                    <CustomCard classes={ classNames(classes.card, classes.borderOrange)} name={'Mean'} value={dataSet.mean} />
+                </Grid>
+                
+                <Grid item>
+                    <CustomCard classes={classNames(classes.card, classes.borderGray)} name={'Median'} value={dataSet.median} />
+                </Grid>
+                
+                <Grid item>
+                    <CustomCard classes={classNames(classes.card, classes.borderGreen)} name={'Mode'} value={dataSet.mode} />
+                </Grid>
         </Grid>
     )
 }

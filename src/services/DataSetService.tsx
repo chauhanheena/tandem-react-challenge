@@ -28,19 +28,19 @@ export default class DataSetService {
     const response: APIResponse<DataSetModel | null> = await apiService.getDataSetById(id);
     if (!response.hasError) {
       const numbers = response.data?.values!;
-      const retrunValue: DataSets = {
+      const returnValue: DataSets = {
         mean: MathUtility.mean(numbers).toFixed(2),
         median: MathUtility.median(numbers).toFixed(2),
         mode: MathUtility.mode(numbers).toFixed(2),
       };
-      return retrunValue;
+      return returnValue;
     }  
     return Promise.reject(response.error);
   }
 
   
   /**
-   * Add new dataset and retrun updated datasets
+   * Add new dataset and return updated datasets
    * @param id 
    * @param value 
    * @returns Dataset

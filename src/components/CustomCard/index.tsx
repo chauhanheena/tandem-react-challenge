@@ -1,15 +1,21 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import React from 'react';
 
-export interface ICustomCardProps {
+/**
+ * Custom CardProps
+ */
+interface ICustomCardProps {
   name: string;
   value: string;
+  classes: string
 }
 
+/**
+ * Component for display cards
+ */
 export default function CustomCard(props: ICustomCardProps) {
-  const { name, value } = props;
+  const { name, value, classes } = props;
   return (
-    <Card>
+    <Card  className={classes} >
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {name}

@@ -30,7 +30,7 @@ export default class APIService {
     try {
       const data = await axios.get(API_PATH);
       const { id, values } = data.data;
-      const retrunValue: APIResponse<DataSetModel> = {
+      const returnValue: APIResponse<DataSetModel> = {
         hasError: false,
         error: null,
         data: {
@@ -38,7 +38,7 @@ export default class APIService {
           values: values,
         },
       };
-      return retrunValue;
+      return returnValue;
     } catch (error) {
       return this.toErrorResponse(error as AxiosError);
     }
@@ -54,12 +54,12 @@ export default class APIService {
     const API_PATH = `/data-set/${id}`;
     try {
       await axios.post(API_PATH, { value });
-      const retrunValue: APIResponse<string> = {
+      const returnValue: APIResponse<string> = {
         hasError: false,
         error: null,
         data: 'ok',
       };
-      return retrunValue;
+      return returnValue;
     } catch (error) {
       return this.toErrorResponse(error as AxiosError);
     }
@@ -72,7 +72,7 @@ export default class APIService {
    */
   private toErrorResponse(error: AxiosError) {
     const { status } = error.response!;
-    const retrunValue: APIResponse<null> = {
+    const returnValue: APIResponse<null> = {
       hasError: true,
       error: {
         code: status,
@@ -80,6 +80,6 @@ export default class APIService {
       },
       data: null,
     };
-    return retrunValue;
+    return returnValue;
   }
 }
