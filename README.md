@@ -39,7 +39,7 @@ tiles to update to reflect the new dataset state.
 
 - ReactJS (Typescript)
 - React Hooks
-- Styled Components
+- Material UI Components
 
 
 ## 🚀 Quick start
